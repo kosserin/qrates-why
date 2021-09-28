@@ -1,0 +1,343 @@
+@import "./colors";
+@import "./media-queries";
+
+header {
+  width: 100vw;
+  min-height: 100vh;
+
+  nav {
+    position: relative;
+    height: 15vh;
+    width: 100vw;
+    display: flex;
+    padding: 0 2.5vw;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 4;
+
+    @include mini {
+      height: 10vh;
+    }
+
+    .nav-logo {
+      a {
+        img {
+          width: 40px;
+
+          @include mini {
+            height: 40px;
+          }
+        }
+      }
+    }
+
+    .nav-links,
+    .nav-right-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+
+      @include mini {
+        display: none;
+      }
+
+      li {
+        margin: 0 15px;
+
+        a {
+          text-transform: uppercase;
+          text-decoration: none;
+          color: $black;
+          font-weight: 600;
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .nav-right-links {
+      #make-a-record-btn {
+        color: $white;
+        background: $black;
+        padding: 1rem 2rem;
+        border-radius: 40px;
+      }
+    }
+
+    .nav-responsive-div {
+      display: none;
+
+      @include mini {
+        display: block;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        i {
+          cursor: pointer;
+          font-size: 1.3rem;
+          margin-right: 20px;
+        }
+
+        .burger {
+          cursor: pointer;
+
+          div {
+            margin: 5px;
+            width: 30px;
+            height: 3px;
+            background: $black;
+            border-radius: 10px;
+          }
+        }
+      }
+    }
+
+    .nav-responsive-container {
+      display: none;
+      @include mini {
+        position: absolute;
+        top: 10vh;
+        left: 0%;
+        border-top: 2px solid $black;
+        width: 100vw;
+        padding: 0 5vw;
+        min-height: 70vh;
+        background: $white;
+        z-index: 5;
+
+        .nav-responsive-links {
+          list-style: none;
+          margin-top: 40px;
+
+          li {
+            margin: 5px 0;
+
+            a {
+              text-decoration: none;
+              color: $black;
+              font-weight: 700;
+              font-size: 2rem;
+            }
+          }
+        }
+
+        .nav-responsive-social {
+          margin: 30px 0;
+          display: flex;
+
+          a {
+            text-decoration: none;
+            color: $black;
+            margin: 15px 5px;
+            font-size: 1.8rem;
+          }
+        }
+
+        .nav-responsive-right {
+          position: relative;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          list-style: none;
+          margin-top: 15px;
+
+          img {
+            position: absolute;
+            top: 0;
+            right: 10vw;
+            width: 200px;
+            transform: translateY(-100%);
+
+            @include phone {
+              width: 100px;
+            }
+          }
+
+          li {
+            a {
+              text-decoration: none;
+              color: $black;
+              border: 2px solid $black;
+              display: inline-block;
+              width: 100%;
+              padding: 1rem 0;
+              text-align: center;
+              border-radius: 30px;
+              font-weight: 500;
+              font-size: 0.9rem;
+            }
+
+            #responsive-make-a-record-btn {
+              color: $white;
+              background: $black;
+              margin-top: 10px;
+              margin-bottom: 20px;
+            }
+          }
+        }
+      }
+    }
+
+    .show-nav {
+      display: block;
+    }
+  }
+}
+
+/* END OF NAV */
+
+.header-container {
+  position: relative;
+  width: 100vw;
+  border-bottom: 2px solid $black;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 2.5vw;
+  min-height: 300vh;
+  transform: translateY(-20vh);
+
+  @include miniLaptop {
+    min-height: 250vh;
+  }
+
+  @include mini {
+    grid-template-columns: 1fr;
+    transform: translateY(0vh);
+    min-height: 250vh;
+    margin-left: 5vw;
+    border-bottom: none;
+  }
+
+  @include phone {
+    min-height: 180vh;
+  }
+
+  .header-text-container {
+    h2 {
+      border: 2px solid $black;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      width: fit-content;
+      padding: 0.5rem;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 3.9rem;
+
+      @include mini {
+        font-size: 3rem;
+      }
+
+      @include phone {
+        font-size: 1.5rem;
+        width: 90%;
+      }
+
+      span {
+        position: relative;
+
+        &::after {
+          position: absolute;
+          content: "";
+          width: 60%;
+          height: fit-content;
+          border: solid 5px #000;
+          border-color: #000 transparent transparent transparent;
+          border-radius: 100%/30px 80px 0 0;
+          bottom: -10%;
+          right: 0;
+          transform: rotate(-1deg);
+        }
+      }
+    }
+
+    p {
+      margin-top: 40px;
+      width: 80%;
+      font-weight: 600;
+      font-size: 1.5rem;
+
+      @include mini {
+        font-size: 1.2rem;
+      }
+
+      @include phone {
+        width: 90%;
+      }
+    }
+  }
+
+  #first-header-image {
+    height: 150vh;
+    border: 2px solid $black;
+    transform: rotate(5deg) translateY(20vh);
+    @include miniLaptop {
+      height: 130vh;
+    }
+
+    @include mini {
+      height: 100vh;
+      transform: rotate(5deg) translate(20vw, -10vh);
+    }
+
+    @include phone {
+      height: 60vh;
+      transform: rotate(5deg) translate(20vw, -10vh);
+    }
+  }
+
+  #second-header-image {
+    position: absolute;
+    bottom: 10vh;
+    height: 130vh;
+    border: 2px solid $black;
+    transform: rotate(-5deg) translate(10vw, 10vh);
+
+    @include miniLaptop {
+      height: 100vh;
+    }
+
+    @include mini {
+      height: 70vh;
+      transform: rotate(-5deg) translate(0vw, -30vh);
+    }
+
+    @include phone {
+      height: 40vh;
+      transform: rotate(-5deg) translate(0vw, -20vh);
+    }
+  }
+
+  #third-header-image {
+    position: relative;
+    height: 50vh;
+    right: -70vw;
+    margin-top: 100px;
+
+    @include laptop {
+      right: -70vw;
+      height: 200px;
+    }
+
+    @include miniLaptop {
+      right: -70vw;
+    }
+
+    @include mini {
+      transform: translateY(-30vh);
+      height: 150px;
+    }
+
+    @include tablet {
+      height: 100px;
+    }
+
+    @include phone {
+      right: -60vw;
+    }
+  }
+}

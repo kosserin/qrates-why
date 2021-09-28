@@ -1,0 +1,27 @@
+@import "./styles/colors";
+@import "./styles/media-queries";
+@import "./styles/header";
+@import "./styles/main";
+@import "./styles/footer";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+.h2-look {
+  background: $white;
+  color: $black;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  border: 2px solid $black;
+  font-size: 0.9rem;
+  width: fit-content;
+}
