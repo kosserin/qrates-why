@@ -58,6 +58,8 @@ footer {
 
     @include tablet {
       flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
     img {
@@ -101,11 +103,19 @@ footer {
         li {
           margin: 0 10px;
 
+          @include phone {
+            margin: 0 3px;
+          }
+
           a {
             text-decoration: none;
             font-weight: 600;
             color: $white;
             font-size: 0.8rem;
+
+            @include phone {
+              font-size: 0.7rem;
+            }
           }
         }
       }

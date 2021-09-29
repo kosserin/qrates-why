@@ -1,9 +1,13 @@
 const navShow = () =>{
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-responsive-container');
+    const html = document.querySelector('html');
+    const background = document.querySelector('.header-background-on-burger-click');
 
     burger.addEventListener('click', ()=>{
         nav.classList.toggle('show-nav');
+        html.classList.toggle('overflow-hidden');
+        background.classList.toggle('show-background');
     })
 }
 
@@ -26,12 +30,12 @@ const artistReviews = () =>{
         {
             text: `"The response was overwhelming. It made me wonder why I hadn't pressed any records on vinyl before now. It felt like something that people had been waiting for for a long time."`,
             artist: 'SOL',
-            img: '../assets/daniel-angele-2gu4hKuFhi0-unsplash.jpg'
+            img: '/qrates-why/assets/daniel-angele-2gu4hKuFhi0-unsplash.jpg'
         },
         {
             text: `“We hit our goal of 100 Records in the first 32 minutes. And I have to be honest, I didn't expect that. There's no world where I would have thought that we were about to sell north of 2800 copies.”`,
             artist: 'Mason Lieberman (The Real Folk Blues, 2020)',
-            img: '../assets/ben-collins-Fr2iwKpsi-Y-unsplash.jpg'
+            img: '/qrates-why/assets/ben-collins-Fr2iwKpsi-Y-unsplash.jpg'
         },
     ];
 
@@ -70,12 +74,12 @@ const artistReviews = () =>{
 }
 
 const changeImages = () =>{
-    const images = ['../assets/sample_4dilla-d886be83.png',
-    "../assets/sample_all_india-36327a32.png",
-    "../assets/sample_black_country_disco-233bbc85.png",
-    "../assets/sample_blarney-469831b2.png",
-    "../assets/sample_bombay-668a0fa8.png",
-    "../assets/sample_female-a4d2352d.png"]
+    const images = ['/qrates-why/assets/sample_4dilla-d886be83.png',
+    "/qrates-why/assets/sample_all_india-36327a32.png",
+    "/qrates-why/assets/sample_black_country_disco-233bbc85.png",
+    "/qrates-why/assets/sample_blarney-469831b2.png",
+    "/qrates-why/assets/sample_bombay-668a0fa8.png",
+    "/qrates-why/assets/sample_female-a4d2352d.png"]
     const image = document.querySelector('#studio img');
     let counter = 0;
     image.src=`${images[0]}`;
@@ -88,10 +92,30 @@ setInterval(() => {
 }, 1000);
 }
 
+const displayCartoon = () =>{
+    const dollar = document.getElementById('dollar-cartoon');
+    const shining = document.getElementById('shining-cartoon');
+    let counter = 0;
+    dollar.style.display='none';
+    shining.style.display='none';
+    setInterval(() => {
+        if( counter === 5 ){
+            dollar.style.display='block';
+            shining.style.display='none';
+        } else if( counter === 10 ){
+            counter = 0;
+            dollar.style.display='none';
+            shining.style.display='block';
+        }
+        counter++;
+    }, 1000);
+}
+
 navShow();
 showQuestion();
 artistReviews();
 changeImages();
+displayCartoon();
 
 /* 
 const questions = document.querySelectorAll('.question');

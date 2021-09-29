@@ -419,6 +419,23 @@ header nav .show-nav {
   }
 }
 
+.header-background-on-burger-click {
+  width: 100vw;
+  height: 90vh;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.show-background {
+  opacity: 1;
+  visibility: visible;
+}
+
 main #text {
   text-align: center;
   display: -webkit-box;
@@ -811,40 +828,26 @@ main #network-and-support .image-container {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-}
-
-@media screen and (max-width: 1180px) {
-  main #network-and-support .image-container {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-  }
+  grid-gap: 50px;
+  padding: 2rem;
 }
 
 @media screen and (max-width: 970px) {
   main #network-and-support .image-container {
-    height: 300px;
+    height: 400px;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 main #network-and-support .image-container img {
   width: 100%;
+  width: 100%;
 }
 
 @media screen and (max-width: 1180px) {
   main #network-and-support .image-container img {
-    width: 50%;
-  }
-}
-
-@media screen and (max-width: 970px) {
-  main #network-and-support .image-container img {
-    width: 50%;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  main #network-and-support .image-container img {
-    width: 40%;
+    width: 100%;
   }
 }
 
@@ -927,7 +930,7 @@ main #network-and-support .right-side {
 }
 
 main #network-and-support .right-side .gramophone {
-  background: url("../assets/pierre-gui-YcUE3rmWGMM-unsplash.jpg") no-repeat center;
+  background: url("/qrates-why/assets/pierre-gui-YcUE3rmWGMM-unsplash.jpg") no-repeat center;
   background-size: cover;
   width: 90%;
   margin: 0 auto;
@@ -947,6 +950,7 @@ main #community {
   main #community {
     -webkit-transform: translateY(0);
             transform: translateY(0);
+    padding: 5rem 0;
   }
 }
 
@@ -1013,6 +1017,7 @@ main #community a {
 }
 
 main #instagram-grid {
+  position: relative;
   width: 100vw;
   display: -ms-grid;
   display: grid;
@@ -1028,6 +1033,23 @@ main #instagram-grid {
 main #instagram-grid img {
   width: 100%;
   height: 100%;
+}
+
+main #instagram-grid #watching-cartoon {
+  position: absolute;
+  right: 10vw;
+  top: 0;
+  width: 170px;
+  height: 170px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+@media screen and (max-width: 970px) {
+  main #instagram-grid #watching-cartoon {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 main #instagram-grid #first-image-tag {
@@ -1267,6 +1289,7 @@ main #artists .right-side {
 }
 
 main #studio {
+  position: relative;
   background: #000;
   color: #ffffff;
   padding: 100px 0;
@@ -1283,6 +1306,7 @@ main #studio {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 2;
 }
 
 main #studio h2 {
@@ -1358,19 +1382,16 @@ main #studio p {
   }
 }
 
-main #studio img {
+main #studio #studio-albums {
   margin: 50px 0 30px 0;
-  /*       background: url("../assets/sample_4dilla-d886be83.png") no-repeat center;
-      background-size: cover; */
   width: 40%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  /*       animation: changeImages 30s linear infinite; */
 }
 
 @media screen and (max-width: 600px) {
-  main #studio img {
+  main #studio #studio-albums {
     width: 80%;
   }
 }
@@ -1388,33 +1409,58 @@ main #studio a {
   margin-top: 40px;
 }
 
-/* @keyframes changeImages {
-  0% {
-    background: url("../assets/sample_4dilla-d886be83.png") no-repeat center;
-    background-size: cover;
+@media screen and (max-width: 970px) {
+  main #studio a {
+    padding: 1.1rem 8rem;
   }
-  20% {
-    background: url("../assets/sample_all_india-36327a32.png") no-repeat center;
-    background-size: cover;
+}
+
+main #studio #dollar-cartoon {
+  position: absolute;
+  right: 10vw;
+  top: 30%;
+  width: 170px;
+  height: 170px;
+}
+
+@media screen and (max-width: 970px) {
+  main #studio #dollar-cartoon {
+    width: 100px;
+    height: 100px;
+    top: 50%;
   }
-  40% {
-    background: url("../assets/sample_black_country_disco-233bbc85.png")
-      no-repeat center;
-    background-size: cover;
+}
+
+@media screen and (max-width: 600px) {
+  main #studio #dollar-cartoon {
+    width: 50px;
+    height: 50px;
   }
-  60% {
-    background: url("../assets/sample_blarney-469831b2.png") no-repeat center;
-    background-size: cover;
+}
+
+main #studio #shining-cartoon {
+  position: absolute;
+  left: 10vw;
+  width: 170px;
+  height: 170px;
+  bottom: 25%;
+}
+
+@media screen and (max-width: 970px) {
+  main #studio #shining-cartoon {
+    width: 100px;
+    height: 100px;
   }
-  80% {
-    background: url("../assets/sample_bombay-668a0fa8.png") no-repeat center;
-    background-size: cover;
+}
+
+@media screen and (max-width: 600px) {
+  main #studio #shining-cartoon {
+    width: 50px;
+    height: 50px;
+    bottom: 20%;
   }
-  100% {
-    background: url("../assets/sample_female-a4d2352d.png") no-repeat center;
-    background-size: cover;
-  }
-} */
+}
+
 footer {
   background: #000;
   width: 100vw;
@@ -1494,6 +1540,12 @@ footer .bottom-footer {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -1559,11 +1611,23 @@ footer .bottom-footer .right-side .bottom-links li {
   margin: 0 10px;
 }
 
+@media screen and (max-width: 600px) {
+  footer .bottom-footer .right-side .bottom-links li {
+    margin: 0 3px;
+  }
+}
+
 footer .bottom-footer .right-side .bottom-links li a {
   text-decoration: none;
   font-weight: 600;
   color: #ffffff;
   font-size: 0.8rem;
+}
+
+@media screen and (max-width: 600px) {
+  footer .bottom-footer .right-side .bottom-links li a {
+    font-size: 0.7rem;
+  }
 }
 
 * {
@@ -1589,5 +1653,9 @@ body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+}
+
+.overflow-hidden {
+  overflow: hidden !important;
 }
 /*# sourceMappingURL=style.css.map */

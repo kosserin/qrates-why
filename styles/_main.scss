@@ -289,28 +289,20 @@ main {
       align-content: center;
       align-items: center;
       text-align: center;
-
-      @include miniLaptop {
-        grid-template-columns: 1fr 1fr;
-      }
+      grid-gap: 50px;
+      padding: 2rem;
 
       @include mini {
-        height: 300px;
+        height: 400px;
+        grid-template-columns: 1fr 1fr 1fr;
       }
 
       img {
         width: 100%;
+        width: 100%;
 
         @include miniLaptop {
-          width: 50%;
-        }
-
-        @include mini {
-          width: 50%;
-        }
-
-        @include tablet {
-          width: 40%;
+          width: 100%;
         }
       }
     }
@@ -400,6 +392,7 @@ main {
 
     @include mini {
       transform: translateY(0);
+      padding: 5rem 0;
     }
 
     h2 {
@@ -454,6 +447,7 @@ main {
   }
 
   #instagram-grid {
+    position: relative;
     width: 100vw;
     display: grid;
     grid-template-areas:
@@ -465,9 +459,24 @@ main {
         "first first second second"
         "third third fifth fifth";
     }
+
     img {
       width: 100%;
       height: 100%;
+    }
+
+    #watching-cartoon {
+      position: absolute;
+      right: 10vw;
+      top: 0;
+      width: 170px;
+      height: 170px;
+      transform: translateY(-50%);
+
+      @include mini {
+        width: 100px;
+        height: 100px;
+      }
     }
 
     #first-image-tag {
@@ -645,6 +654,7 @@ main {
   }
 
   #studio {
+    position: relative;
     background: $black;
     color: $white;
     padding: 100px 0;
@@ -652,6 +662,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 2;
 
     h2 {
       background: transparent;
@@ -716,13 +727,10 @@ main {
       }
     }
 
-    img {
+    #studio-albums {
       margin: 50px 0 30px 0;
-      /*       background: url("/qrates-why/assets/sample_4dilla-d886be83.png") no-repeat center;
-      background-size: cover; */
       width: 40%;
       height: fit-content;
-      /*       animation: changeImages 30s linear infinite; */
 
       @include phone {
         width: 80%;
@@ -740,34 +748,48 @@ main {
       text-transform: uppercase;
       font-weight: 600;
       margin-top: 40px;
+
+      @include mini {
+        padding: 1.1rem 8rem;
+      }
+    }
+
+    #dollar-cartoon {
+      position: absolute;
+      right: 10vw;
+      top: 30%;
+      width: 170px;
+      height: 170px;
+
+      @include mini {
+        width: 100px;
+        height: 100px;
+        top: 50%;
+      }
+
+      @include phone {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    #shining-cartoon {
+      position: absolute;
+      left: 10vw;
+      width: 170px;
+      height: 170px;
+      bottom: 25%;
+
+      @include mini {
+        width: 100px;
+        height: 100px;
+      }
+
+      @include phone {
+        width: 50px;
+        height: 50px;
+        bottom: 20%;
+      }
     }
   }
 }
-
-/* @keyframes changeImages {
-  0% {
-    background: url("/qrates-why/assets/sample_4dilla-d886be83.png") no-repeat center;
-    background-size: cover;
-  }
-  20% {
-    background: url("/qrates-why/assets/sample_all_india-36327a32.png") no-repeat center;
-    background-size: cover;
-  }
-  40% {
-    background: url("/qrates-why/assets/sample_black_country_disco-233bbc85.png")
-      no-repeat center;
-    background-size: cover;
-  }
-  60% {
-    background: url("/qrates-why/assets/sample_blarney-469831b2.png") no-repeat center;
-    background-size: cover;
-  }
-  80% {
-    background: url("/qrates-why/assets/sample_bombay-668a0fa8.png") no-repeat center;
-    background-size: cover;
-  }
-  100% {
-    background: url("/qrates-why/assets/sample_female-a4d2352d.png") no-repeat center;
-    background-size: cover;
-  }
-} */
