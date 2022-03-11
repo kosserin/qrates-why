@@ -8,4 +8,5 @@ This is another completed website from frontendpractice I did
 
 ## Mobile Preview!
 
-[Uploading Screenshot 2022-03-11 at 21-50-58 Qrates.png…]()
+![Screenshot 2022-03-11 at 21-50-58 Qrates](https://user-images.githubusercontent.com/71221268/157963107-c114a623-c8c5-4aba-828a-9fc56599b3d4.png)
+
